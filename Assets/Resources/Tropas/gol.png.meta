@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 0804eec65ca88a94f9411e0b55227a4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6723359014397041180
+    second: gol_0
+  - first:
+      213: 3957537259306154381
+    second: gol_1
+  - first:
+      213: 2251489745806760250
+    second: gol_2
+  - first:
+      213: 1138043599607396582
+    second: gol_3
+  - first:
+      213: 1563695920564007550
+    second: gol_4
+  - first:
+      213: -9095321617454254108
+    second: gol_5
+  - first:
+      213: -4396084904911622335
+    second: gol_6
+  - first:
+      213: 4736965055424521278
+    second: gol_7
+  - first:
+      213: -5624677024683133367
+    second: gol_8
+  - first:
+      213: 3386592739277298554
+    second: gol_9
+  - first:
+      213: -3012324595344048154
+    second: gol_10
+  - first:
+      213: -7793029098802099869
+    second: gol_11
+  - first:
+      213: 42217270316805906
+    second: gol_12
+  - first:
+      213: 3911042725722729067
+    second: gol_13
+  - first:
+      213: 8638185599427505925
+    second: gol_14
+  - first:
+      213: 3904286254771498376
+    second: gol_15
+  - first:
+      213: 8905566169669667775
+    second: gol_16
+  - first:
+      213: 2962125082814629139
+    second: gol_17
+  - first:
+      213: -7642690051864563147
+    second: gol_18
+  - first:
+      213: 5850828778080389969
+    second: gol_19
+  - first:
+      213: 6979292246364450645
+    second: gol_20
+  - first:
+      213: -5293895072772397158
+    second: gol_21
+  - first:
+      213: 3511857225563112979
+    second: gol_22
+  - first:
+      213: -2846547002730146636
+    second: gol_23
+  - first:
+      213: 7220359377187961701
+    second: gol_24
+  - first:
+      213: -5271177258816928118
+    second: gol_25
+  - first:
+      213: -8879668135578866588
+    second: gol_26
+  - first:
+      213: -9039149914912550563
+    second: gol_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gol_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 557
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a5e86d66b2e4d50800000000000000
+      internalID: 6723359014397041180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 556
+        width: 104
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d89f05e5b2ffbe630800000000000000
+      internalID: 3957537259306154381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_2
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 560
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a391f32bef5ee3f10800000000000000
+      internalID: 2251489745806760250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 562
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8718dcf942bcf00800000000000000
+      internalID: 1138043599607396582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_4
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 560
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72f1f9a72d53b510800000000000000
+      internalID: 1563695920564007550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_5
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 558
+        width: 86
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e735b19d2de6c180800000000000000
+      internalID: -9095321617454254108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_6
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 556
+        width: 103
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f29480218fdf2c0800000000000000
+      internalID: -4396084904911622335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_7
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 381
+        width: 92
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e346402de941db140800000000000000
+      internalID: 4736965055424521278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 386
+        width: 80
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946f57ffb0221f1b0800000000000000
+      internalID: -5624677024683133367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_9
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 384
+        width: 92
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7b5a8747289ffe20800000000000000
+      internalID: 3386592739277298554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_10
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 380
+        width: 104
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef78529db21236d0800000000000000
+      internalID: -3012324595344048154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_11
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 384
+        width: 92
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3694e99e25999d390800000000000000
+      internalID: -7793029098802099869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_12
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 382
+        width: 104
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21fae98326cf59000800000000000000
+      internalID: 42217270316805906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_13
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 382
+        width: 86
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a241033a0d64630800000000000000
+      internalID: 3911042725722729067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_14
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 205
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f65cd190001e770800000000000000
+      internalID: 8638185599427505925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_15
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 204
+        width: 104
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d6815b9afce2630800000000000000
+      internalID: 3904286254771498376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_16
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 208
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb85e26f3de69b70800000000000000
+      internalID: 8905566169669667775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_17
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 210
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 315c07d91159b1920800000000000000
+      internalID: 2962125082814629139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_18
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 208
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 532733af3e5bfe590800000000000000
+      internalID: -7642690051864563147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_19
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 206
+        width: 86
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15b4d1f46c1523150800000000000000
+      internalID: 5850828778080389969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_20
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 204
+        width: 103
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55fe038f15d6bd060800000000000000
+      internalID: 6979292246364450645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_21
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 29
+        width: 92
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97e535ca7e4886b0800000000000000
+      internalID: -5293895072772397158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 34
+        width: 80
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 316049f3a8f9cb030800000000000000
+      internalID: 3511857225563112979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_23
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 32
+        width: 92
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b411d925980f78d0800000000000000
+      internalID: -2846547002730146636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_24
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 28
+        width: 104
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56bf2f3399ed33460800000000000000
+      internalID: 7220359377187961701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_25
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 32
+        width: 92
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a868914063409d6b0800000000000000
+      internalID: -5271177258816928118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_26
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 30
+        width: 104
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c677f80e415c480800000000000000
+      internalID: -8879668135578866588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gol_27
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 30
+        width: 86
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d51922a3b0d7e8280800000000000000
+      internalID: -9039149914912550563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      gol_0: 6723359014397041180
+      gol_1: 3957537259306154381
+      gol_10: -3012324595344048154
+      gol_11: -7793029098802099869
+      gol_12: 42217270316805906
+      gol_13: 3911042725722729067
+      gol_14: 8638185599427505925
+      gol_15: 3904286254771498376
+      gol_16: 8905566169669667775
+      gol_17: 2962125082814629139
+      gol_18: -7642690051864563147
+      gol_19: 5850828778080389969
+      gol_2: 2251489745806760250
+      gol_20: 6979292246364450645
+      gol_21: -5293895072772397158
+      gol_22: 3511857225563112979
+      gol_23: -2846547002730146636
+      gol_24: 7220359377187961701
+      gol_25: -5271177258816928118
+      gol_26: -8879668135578866588
+      gol_27: -9039149914912550563
+      gol_3: 1138043599607396582
+      gol_4: 1563695920564007550
+      gol_5: -9095321617454254108
+      gol_6: -4396084904911622335
+      gol_7: 4736965055424521278
+      gol_8: -5624677024683133367
+      gol_9: 3386592739277298554
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

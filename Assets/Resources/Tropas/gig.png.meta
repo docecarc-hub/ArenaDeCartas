@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 343cdf8e03c81a24aaa04df02608a3bd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5769534056403969574
+    second: gig_0
+  - first:
+      213: -2554100313005580853
+    second: gig_1
+  - first:
+      213: 201177014371536151
+    second: gig_2
+  - first:
+      213: -6681235467025918082
+    second: gig_3
+  - first:
+      213: 6611018472447443340
+    second: gig_4
+  - first:
+      213: 5189375917378701984
+    second: gig_5
+  - first:
+      213: 3682559213795647505
+    second: gig_6
+  - first:
+      213: -1865376284809939056
+    second: gig_7
+  - first:
+      213: -7477507287849507717
+    second: gig_8
+  - first:
+      213: 597757353410249728
+    second: gig_9
+  - first:
+      213: 7067162028742019756
+    second: gig_10
+  - first:
+      213: -4509329920852432180
+    second: gig_11
+  - first:
+      213: -7170921998538341344
+    second: gig_12
+  - first:
+      213: -5495496471039028552
+    second: gig_13
+  - first:
+      213: -2229647109372839122
+    second: gig_14
+  - first:
+      213: 2470784212932608118
+    second: gig_15
+  - first:
+      213: -8115667435778027572
+    second: gig_16
+  - first:
+      213: -2349477108430887913
+    second: gig_17
+  - first:
+      213: -4455431943740080477
+    second: gig_18
+  - first:
+      213: 4735438534653685523
+    second: gig_19
+  - first:
+      213: -7047483907116010723
+    second: gig_20
+  - first:
+      213: 777780768681504692
+    second: gig_21
+  - first:
+      213: 3474196429753443761
+    second: gig_22
+  - first:
+      213: -3057532409475477128
+    second: gig_23
+  - first:
+      213: -6560570409459946436
+    second: gig_24
+  - first:
+      213: 888390755070679632
+    second: gig_25
+  - first:
+      213: -128745924167566317
+    second: gig_26
+  - first:
+      213: -193637277421121575
+    second: gig_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gig_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 552
+        width: 82
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6262a7fe7a0811050800000000000000
+      internalID: 5769534056403969574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_1
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 549
+        width: 94
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd969a2c430e8cd0800000000000000
+      internalID: -2554100313005580853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_2
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 554
+        width: 82
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71dc69ebd69bac200800000000000000
+      internalID: 201177014371536151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_3
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 555
+        width: 70
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77dd2fcdbb7743a0800000000000000
+      internalID: -6681235467025918082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_4
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 554
+        width: 82
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8186c5264e0fbb50800000000000000
+      internalID: 6611018472447443340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_5
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 552
+        width: 76
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa035107ed540840800000000000000
+      internalID: 5189375917378701984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_6
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 550
+        width: 92
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110a1aa08141b1330800000000000000
+      internalID: 3682559213795647505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 379
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0973773f62adc16e0800000000000000
+      internalID: -1865376284809939056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_8
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 382
+        width: 70
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74e55e3dbe8a3890800000000000000
+      internalID: -7477507287849507717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_9
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 381
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00445e75529ab4800800000000000000
+      internalID: 597757353410249728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_10
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 376
+        width: 94
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa0c45fb6a931260800000000000000
+      internalID: 7067162028742019756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_11
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 381
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccaec841454ab61c0800000000000000
+      internalID: -4509329920852432180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_12
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 380
+        width: 92
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 024861d7f64cb7c90800000000000000
+      internalID: -7170921998538341344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_13
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 382
+        width: 76
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b25e4373131cb3b0800000000000000
+      internalID: -5495496471039028552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_14
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 200
+        width: 82
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2bfa5764c3be01e0800000000000000
+      internalID: -2229647109372839122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_15
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 197
+        width: 94
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 670cd70a62df94220800000000000000
+      internalID: 2470784212932608118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_16
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 202
+        width: 82
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfce3f377b5f5f80800000000000000
+      internalID: -8115667435778027572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_17
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 203
+        width: 70
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 714a018940bf46fd0800000000000000
+      internalID: -2349477108430887913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_18
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 202
+        width: 82
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aeb178c0402b22c0800000000000000
+      internalID: -4455431943740080477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_19
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 200
+        width: 76
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31faab10248a7b140800000000000000
+      internalID: 4735438534653685523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_20
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 198
+        width: 92
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d137114c9be423e90800000000000000
+      internalID: -7047483907116010723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_21
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 27
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf246efc7b3bca00800000000000000
+      internalID: 777780768681504692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_22
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 30
+        width: 70
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b5626bee33d63030800000000000000
+      internalID: 3474196429753443761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_23
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 29
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87158fb19767195d0800000000000000
+      internalID: -3057532409475477128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_24
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 24
+        width: 94
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c6334d8fb24f4a0800000000000000
+      internalID: -6560570409459946436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_25
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 29
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a9ab15fa2345c00800000000000000
+      internalID: 888390755070679632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_26
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 28
+        width: 92
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c76bb934a963ef0800000000000000
+      internalID: -128745924167566317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gig_27
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 30
+        width: 76
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df4a001cef005df0800000000000000
+      internalID: -193637277421121575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      gig_0: 5769534056403969574
+      gig_1: -2554100313005580853
+      gig_10: 7067162028742019756
+      gig_11: -4509329920852432180
+      gig_12: -7170921998538341344
+      gig_13: -5495496471039028552
+      gig_14: -2229647109372839122
+      gig_15: 2470784212932608118
+      gig_16: -8115667435778027572
+      gig_17: -2349477108430887913
+      gig_18: -4455431943740080477
+      gig_19: 4735438534653685523
+      gig_2: 201177014371536151
+      gig_20: -7047483907116010723
+      gig_21: 777780768681504692
+      gig_22: 3474196429753443761
+      gig_23: -3057532409475477128
+      gig_24: -6560570409459946436
+      gig_25: 888390755070679632
+      gig_26: -128745924167566317
+      gig_27: -193637277421121575
+      gig_3: -6681235467025918082
+      gig_4: 6611018472447443340
+      gig_5: 5189375917378701984
+      gig_6: 3682559213795647505
+      gig_7: -1865376284809939056
+      gig_8: -7477507287849507717
+      gig_9: 597757353410249728
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

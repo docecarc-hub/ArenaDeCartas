@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 1ea6508f387636245af3fb9a8ae48165
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5461663479537321720
+    second: vik_0
+  - first:
+      213: 9130881998399483653
+    second: vik_1
+  - first:
+      213: -2758828715200397496
+    second: vik_2
+  - first:
+      213: -3259850844806059120
+    second: vik_3
+  - first:
+      213: -1375502012753585488
+    second: vik_4
+  - first:
+      213: 106570946790644700
+    second: vik_5
+  - first:
+      213: -6726395187906157172
+    second: vik_6
+  - first:
+      213: -8457090198708631427
+    second: vik_7
+  - first:
+      213: 2853878532513221330
+    second: vik_8
+  - first:
+      213: 1503592581457762818
+    second: vik_9
+  - first:
+      213: 3563373069811051890
+    second: vik_10
+  - first:
+      213: 5772938204884944742
+    second: vik_11
+  - first:
+      213: 7714350255220545595
+    second: vik_12
+  - first:
+      213: -5750478325821898904
+    second: vik_13
+  - first:
+      213: 6742429038051126215
+    second: vik_14
+  - first:
+      213: 184949661616221612
+    second: vik_15
+  - first:
+      213: 4120451075007458295
+    second: vik_16
+  - first:
+      213: 3160813476778507078
+    second: vik_17
+  - first:
+      213: 5055626221904462713
+    second: vik_18
+  - first:
+      213: -4161543102208465061
+    second: vik_19
+  - first:
+      213: 7952731558763251124
+    second: vik_20
+  - first:
+      213: -421082746141090299
+    second: vik_21
+  - first:
+      213: 6389757428353695704
+    second: vik_22
+  - first:
+      213: 3899389568687090146
+    second: vik_23
+  - first:
+      213: 3644216852533364715
+    second: vik_24
+  - first:
+      213: 5475803423296603411
+    second: vik_25
+  - first:
+      213: -3632596366336342467
+    second: vik_26
+  - first:
+      213: 6885377258821597954
+    second: vik_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vik_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 551
+        width: 89
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6cb8c5ff9bbcb40800000000000000
+      internalID: 5461663479537321720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_1
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 549
+        width: 97
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f2c90dcc867be70800000000000000
+      internalID: 9130881998399483653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_2
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 555
+        width: 89
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84f355286eba6b9d0800000000000000
+      internalID: -2758828715200397496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_3
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 554
+        width: 82
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09be3969deea2c2d0800000000000000
+      internalID: -3259850844806059120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_4
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 555
+        width: 89
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0badcf5053c39ece0800000000000000
+      internalID: -1375502012753585488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_5
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 552
+        width: 78
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb55d226bd9a7100800000000000000
+      internalID: 106570946790644700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_6
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 548
+        width: 109
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85e4fde63b07a2a0800000000000000
+      internalID: -6726395187906157172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 378
+        width: 79
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78c888954162aa80800000000000000
+      internalID: -8457090198708631427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_8
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 382
+        width: 78
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da4092a7630b9720800000000000000
+      internalID: 2853878532513221330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_9
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 382
+        width: 79
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ad3b88c75ddd410800000000000000
+      internalID: 1503592581457762818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_10
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 376
+        width: 86
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27de74c6de4a37130800000000000000
+      internalID: 3563373069811051890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_11
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 382
+        width: 79
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 667c27406b89d1050800000000000000
+      internalID: 5772938204884944742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_12
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 379
+        width: 106
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b385d5b4fa0ee0b60800000000000000
+      internalID: 7714350255220545595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_13
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 381
+        width: 79
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86f7dc41e623230b0800000000000000
+      internalID: -5750478325821898904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_14
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 199
+        width: 89
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cbe058bc7be19d50800000000000000
+      internalID: 6742429038051126215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_15
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 197
+        width: 97
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cada6f1ccb2119200800000000000000
+      internalID: 184949661616221612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_16
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 203
+        width: 89
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb2230fb68ce2930800000000000000
+      internalID: 4120451075007458295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_17
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 202
+        width: 82
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b76a44c177ddb20800000000000000
+      internalID: 3160813476778507078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_18
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 203
+        width: 89
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97304c15341392640800000000000000
+      internalID: 5055626221904462713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_19
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 200
+        width: 78
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b57236be89a3f36c0800000000000000
+      internalID: -4161543102208465061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_20
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 196
+        width: 109
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b54f12a737cd5e60800000000000000
+      internalID: 7952731558763251124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_21
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 26
+        width: 79
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ed63f2973082af0800000000000000
+      internalID: -421082746141090299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_22
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 30
+        width: 78
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8df7fe5d68afca850800000000000000
+      internalID: 6389757428353695704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_23
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 30
+        width: 79
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e92572272a6d1630800000000000000
+      internalID: 3899389568687090146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_24
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 24
+        width: 86
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be74eb36bebd29230800000000000000
+      internalID: 3644216852533364715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_25
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 30
+        width: 79
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31546719336fdfb40800000000000000
+      internalID: 5475803423296603411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_26
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 27
+        width: 106
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d36c524e9dc669dc0800000000000000
+      internalID: -3632596366336342467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vik_27
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 29
+        width: 79
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b3d98f226cd8f50800000000000000
+      internalID: 6885377258821597954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      vik_0: 5461663479537321720
+      vik_1: 9130881998399483653
+      vik_10: 3563373069811051890
+      vik_11: 5772938204884944742
+      vik_12: 7714350255220545595
+      vik_13: -5750478325821898904
+      vik_14: 6742429038051126215
+      vik_15: 184949661616221612
+      vik_16: 4120451075007458295
+      vik_17: 3160813476778507078
+      vik_18: 5055626221904462713
+      vik_19: -4161543102208465061
+      vik_2: -2758828715200397496
+      vik_20: 7952731558763251124
+      vik_21: -421082746141090299
+      vik_22: 6389757428353695704
+      vik_23: 3899389568687090146
+      vik_24: 3644216852533364715
+      vik_25: 5475803423296603411
+      vik_26: -3632596366336342467
+      vik_27: 6885377258821597954
+      vik_3: -3259850844806059120
+      vik_4: -1375502012753585488
+      vik_5: 106570946790644700
+      vik_6: -6726395187906157172
+      vik_7: -8457090198708631427
+      vik_8: 2853878532513221330
+      vik_9: 1503592581457762818
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
