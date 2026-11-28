@@ -31,7 +31,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        alvo: [StandaloneWindows64, Android, iOS]
+        include:
+          - alvo: StandaloneWindows64
+            imagem: windows-mono
+          - alvo: Android
+            imagem: android
+          - alvo: iOS
+            imagem: ios
     steps:
       - name: Liberar espaço em disco (as imagens do Unity são grandes)
         uses: jlumbroso/free-disk-space@v1.3.1
@@ -55,6 +61,8 @@ jobs:
         uses: game-ci/unity-builder@v4
         with:
           targetPlatform: ${{ matrix.alvo }}
+          # imagem do Unity 6000.3.29f1 publicada pelo GameCI (série 4)
+          customImage: unityci/editor:ubuntu-6000.3.29f1-${{ matrix.imagem }}-4
           buildName: ArenaDeCartas
           versioning: Custom
           version: ${{ env.VERSAO }}
