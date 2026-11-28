@@ -55,22 +55,61 @@ public static class Sfx
         v.PlayOneShot(clip, volume * SfxVolume);
     }
 
+    // Troca de música suave: a atual abaixa, a nova entra subindo (sem corte seco)
     public static void Music(string name)
     {
         if (music == null || currentMusic == name) return;
         currentMusic = name;
         var clip = Clip(name);
         if (clip == null) return;
-        music.clip = clip;
-        music.Play();
+        if (fader == null) fader = music.gameObject.AddComponent<MusicFader>();
+        fader.CrossTo(music, clip);
     }
+
+    static MusicFader fader;
+    public static float MusicTarget => MusicVolume;
 
     public static void SetVolumes(float musicVol, float sfxVol)
     {
         MusicVolume = musicVol;
         SfxVolume = sfxVol;
-        if (music != null) music.volume = musicVol;
+        if (music != null && (fader == null || !fader.Busy)) music.volume = musicVol;
         PlayerPrefs.SetFloat("volMusica", musicVol);
         PlayerPrefs.SetFloat("volEfeitos", sfxVol);
+    }
+}
+
+// Faz a troca suave entre duas músicas (0,6 s descendo e 0,8 s subindo)
+public class MusicFader : MonoBehaviour
+{
+    AudioSource src;
+    AudioClip next;
+    float t;
+    int stage;      // 0 parado, 1 abaixando, 2 subindo
+    public bool Busy => stage != 0;
+
+    public void CrossTo(AudioSource s, AudioClip clip)
+    {
+        src = s;
+        next = clip;
+        if (!src.isPlaying || src.clip == null) { src.clip = next; src.volume = 0f; src.Play(); stage = 2; t = 0f; return; }
+        stage = 1;
+        t = 0f;
+    }
+
+    void Update()
+    {
+        if (stage == 0 || src == null) return;
+        t += Time.unscaledDeltaTime;
+        if (stage == 1)
+        {
+            src.volume = Mathf.Lerp(Sfx.MusicTarget, 0f, t / 0.6f);
+            if (t >= 0.6f) { src.clip = next; src.Play(); stage = 2; t = 0f; }
+        }
+        else
+        {
+            src.volume = Mathf.Lerp(0f, Sfx.MusicTarget, t / 0.8f);
+            if (t >= 0.8f) { src.volume = Sfx.MusicTarget; stage = 0; }
+        }
     }
 }

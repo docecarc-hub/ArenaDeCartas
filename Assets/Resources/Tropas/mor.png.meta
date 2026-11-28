@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 2fb49f71219a2704886fa3cd5ae50700
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1320179822876406710
+    second: mor_0
+  - first:
+      213: 5904960395592544652
+    second: mor_1
+  - first:
+      213: 7045698831956687050
+    second: mor_2
+  - first:
+      213: 1681469567327301331
+    second: mor_3
+  - first:
+      213: -6013114224868275211
+    second: mor_4
+  - first:
+      213: -905050165560783438
+    second: mor_5
+  - first:
+      213: -4115399978963653721
+    second: mor_6
+  - first:
+      213: 6563761716876930304
+    second: mor_7
+  - first:
+      213: 8916833588495104279
+    second: mor_8
+  - first:
+      213: -7793935847662614902
+    second: mor_9
+  - first:
+      213: 90885528712368007
+    second: mor_10
+  - first:
+      213: -7988147644984914736
+    second: mor_11
+  - first:
+      213: -6024689743692530457
+    second: mor_12
+  - first:
+      213: 5800489754583221290
+    second: mor_13
+  - first:
+      213: 1535305098990240099
+    second: mor_14
+  - first:
+      213: -5490614934107993729
+    second: mor_15
+  - first:
+      213: -2287734915202299329
+    second: mor_16
+  - first:
+      213: -6079931139717342487
+    second: mor_17
+  - first:
+      213: -7047774293776435370
+    second: mor_18
+  - first:
+      213: -6512105207839130285
+    second: mor_19
+  - first:
+      213: -3168591772775887029
+    second: mor_20
+  - first:
+      213: -3149913044846183324
+    second: mor_21
+  - first:
+      213: -4009197063161944433
+    second: mor_22
+  - first:
+      213: -5414858977004269731
+    second: mor_23
+  - first:
+      213: 1863430308588694696
+    second: mor_24
+  - first:
+      213: 5428159448427926525
+    second: mor_25
+  - first:
+      213: 3982418777098511527
+    second: mor_26
+  - first:
+      213: 4902356660248792132
+    second: mor_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 4
+    mipBias: -0.4
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mor_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 592
+        width: 112
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b3bf26ed88325210800000000000000
+      internalID: 1320179822876406710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 596
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c813b08a132a2f150800000000000000
+      internalID: 5904960395592544652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 602
+        width: 112
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac8b92902c957c160800000000000000
+      internalID: 7045698831956687050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_3
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 579
+        width: 104
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de6c25a9a7c55710800000000000000
+      internalID: 1681469567327301331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_4
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 602
+        width: 112
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fbc0e8a8702d8ca0800000000000000
+      internalID: -6013114224868275211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_5
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 595
+        width: 112
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd47d96bad9073f0800000000000000
+      internalID: -905050165560783438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_6
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 592
+        width: 104
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aba831068923e6c0800000000000000
+      internalID: -4115399978963653721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 416
+        width: 112
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00de1c4518a271b50800000000000000
+      internalID: 6563761716876930304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 420
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719b583c7e4febb70800000000000000
+      internalID: 8916833588495104279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 426
+        width: 112
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8603edf3a066d390800000000000000
+      internalID: -7793935847662614902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_10
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 403
+        width: 104
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78fcf1628e3e24100800000000000000
+      internalID: 90885528712368007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_11
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 426
+        width: 112
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc0d473a06642190800000000000000
+      internalID: -7988147644984914736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_12
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 419
+        width: 112
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec74492990046ca0800000000000000
+      internalID: -6024689743692530457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_13
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 416
+        width: 104
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24c93113ba7f7050800000000000000
+      internalID: 5800489754583221290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 240
+        width: 112
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 361c8276adf7e4510800000000000000
+      internalID: 1535305098990240099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 244
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f79c906deca6dc3b0800000000000000
+      internalID: -5490614934107993729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_16
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 250
+        width: 112
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3acb1f27355040e0800000000000000
+      internalID: -2287734915202299329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_17
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 227
+        width: 104
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eadf4e57debf9ba0800000000000000
+      internalID: -6079931139717342487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_18
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 250
+        width: 112
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657735ade96413e90800000000000000
+      internalID: -7047774293776435370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_19
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 243
+        width: 112
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35df6cae0da50a5a0800000000000000
+      internalID: -6512105207839130285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_20
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 240
+        width: 104
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4fc7711296e604d0800000000000000
+      internalID: -3168591772775887029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 112
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46cf29056c24944d0800000000000000
+      internalID: -3149913044846183324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 68
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8661bf33887c58c0800000000000000
+      internalID: -4009197063161944433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_23
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 74
+        width: 112
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f43d6137e8ad4b0800000000000000
+      internalID: -5414858977004269731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_24
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 51
+        width: 104
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac20272efb3cd910800000000000000
+      internalID: 1863430308588694696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_25
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 74
+        width: 112
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df31abb3242b45b40800000000000000
+      internalID: 5428159448427926525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_26
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 67
+        width: 112
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a46dcb27c4644730800000000000000
+      internalID: 3982418777098511527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mor_27
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 64
+        width: 104
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c4660a86ba80440800000000000000
+      internalID: 4902356660248792132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      mor_0: 1320179822876406710
+      mor_1: 5904960395592544652
+      mor_10: 90885528712368007
+      mor_11: -7988147644984914736
+      mor_12: -6024689743692530457
+      mor_13: 5800489754583221290
+      mor_14: 1535305098990240099
+      mor_15: -5490614934107993729
+      mor_16: -2287734915202299329
+      mor_17: -6079931139717342487
+      mor_18: -7047774293776435370
+      mor_19: -6512105207839130285
+      mor_2: 7045698831956687050
+      mor_20: -3168591772775887029
+      mor_21: -3149913044846183324
+      mor_22: -4009197063161944433
+      mor_23: -5414858977004269731
+      mor_24: 1863430308588694696
+      mor_25: 5428159448427926525
+      mor_26: 3982418777098511527
+      mor_27: 4902356660248792132
+      mor_3: 1681469567327301331
+      mor_4: -6013114224868275211
+      mor_5: -905050165560783438
+      mor_6: -4115399978963653721
+      mor_7: 6563761716876930304
+      mor_8: 8916833588495104279
+      mor_9: -7793935847662614902
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

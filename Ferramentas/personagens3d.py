@@ -452,3 +452,284 @@ def tower_image(team, king, size=320):
     ext = 2.15 if king else 1.8
     cy = 1.75 if king else 1.65
     return render(sc, size=size, extent=ext, center=(0, cy, 0)), ext, cy
+
+
+# ------------------------------------------------------------------ voadores e construções
+
+def dragao(pose):
+    """Dragãozinho voando: as asas batem com pose.leg; ataque abre a boca e solta fogo."""
+    P = []
+    y = 0.95 + pose.bob * 2
+    body = V(0, y, 0.05)
+    P.append(Prim("ellipsoid", "green", c=body, r=V(0.3, 0.28, 0.42), k=0.08))
+    P.append(Prim("ellipsoid", "fire", c=body + V(0, -0.08, -0.05), r=V(0.2, 0.17, 0.32)))      # barriga
+    head = body + V(0, 0.28, -0.42)
+    P.append(Prim("sphere", "green", c=head, r=0.24, k=0.08))
+    P.append(Prim("ellipsoid", "green", c=head + V(0, -0.06, -0.22), r=V(0.14, 0.1, 0.14), k=0.05))   # focinho
+    for side in (-1, 1):
+        P.append(Prim("sphere", "white", c=head + V(side * 0.11, 0.08, -0.17), r=0.07))
+        P.append(Prim("sphere", "dark", c=head + V(side * 0.11, 0.08, -0.22), r=0.035))
+        P.append(Prim("cone", "gold", c=head + V(side * 0.12, 0.15, 0.06), r=0.05, h=0.18))      # chifres
+        # asas (membrana na cor do time) batendo
+        flap = pose.leg * 1.2
+        root = body + V(side * 0.22, 0.12, 0.05)
+        tip = root + rot_z(side * (0.35 + flap)) @ V(side * 0.75, 0.0, 0.0)
+        P.append(Prim("capsule", "green", a=root, b=tip, r=0.04))
+        P.append(Prim("ellipsoid", "team", c=(root + tip) / 2 + V(0, -0.05, 0.12),
+                      r=V(0.36, 0.05, 0.22), R=rot_z(side * (0.35 + flap))))
+    P.append(Prim("capsule", "green", a=body + V(0, 0, 0.35), b=body + V(0, -0.15, 0.85), r=0.08))   # rabo
+    if pose.atk > 0.5:
+        P.append(Prim("sphere", "fire", c=head + V(0, -0.05, -0.45), r=0.16))
+        P.append(Prim("sphere", "glow", c=head + V(0, -0.05, -0.4), r=0.09))
+    return P
+
+
+def morcego(pose):
+    P = []
+    y = 0.7 + pose.bob * 2
+    body = V(0, y, 0)
+    P.append(Prim("ellipsoid", "purple", c=body, r=V(0.18, 0.2, 0.16), k=0.05))
+    head = body + V(0, 0.2, -0.04)
+    P.append(Prim("sphere", "purple", c=head, r=0.15, k=0.05))
+    for side in (-1, 1):
+        P.append(Prim("cone", "purple", c=head + V(side * 0.09, 0.1, 0), r=0.06, h=0.18))
+        P.append(Prim("sphere", "glow", c=head + V(side * 0.06, 0.02, -0.12), r=0.035))
+        flap = pose.leg * 1.4
+        root = body + V(side * 0.12, 0.05, 0)
+        tip = root + rot_z(side * (0.25 + flap)) @ V(side * 0.5, 0, 0)
+        P.append(Prim("ellipsoid", "team", c=(root + tip) / 2, r=V(0.27, 0.04, 0.16), R=rot_z(side * (0.25 + flap))))
+    if pose.atk > 0.5:
+        P.append(Prim("cone", "white", c=head + V(0, -0.1, -0.13), r=0.03, h=0.06))
+    return P
+
+
+def canhao(pose):
+    P = []
+    P.append(Prim("box", "wood", c=V(0, 0.18, 0), h=V(0.45, 0.12, 0.4), r=0.04))
+    for sx in (-1, 1):
+        for sz in (-1, 1):
+            P.append(Prim("cyl", "leather", c=V(sx * 0.42, 0.16, sz * 0.25), r=0.15, h=0.05, rr=0.02, R=rot_z(math.pi / 2)))
+    P.append(Prim("box", "team", c=V(0, 0.33, 0), h=V(0.3, 0.05, 0.28), r=0.02))
+    recoil = 0.12 if pose.atk > 0.5 else (-0.05 if pose.atk < -0.5 else 0.0)
+    P.append(Prim("cyl", "dark", c=V(0, 0.52, -0.15 + recoil), r=0.15, h=0.42, rr=0.05, R=rot_x(1.25)))
+    P.append(Prim("sphere", "dark", c=V(0, 0.48, 0.18 + recoil), r=0.2))
+    P.append(Prim("cyl", "metal", c=V(0, 0.62, -0.55 + recoil), r=0.17, h=0.05, rr=0.02, R=rot_x(1.25)))
+    if pose.atk > 0.5:
+        P.append(Prim("sphere", "glow", c=V(0, 0.68, -0.8), r=0.16))
+    # bandeirinha
+    P.append(Prim("capsule", "wood", a=V(0.38, 0.3, 0.3), b=V(0.38, 0.95, 0.3), r=0.02))
+    P.append(Prim("box", "team", c=V(0.52, 0.85, 0.3), h=V(0.13, 0.08, 0.01), r=0.01))
+    return P
+
+
+def torre_bombas(pose):
+    P = []
+    P.append(Prim("box", "stone_d", c=V(0, 0.1, 0), h=V(0.5, 0.1, 0.5), r=0.04))
+    P.append(Prim("box", "stone", c=V(0, 0.6, 0), h=V(0.4, 0.45, 0.4), r=0.05))
+    P.append(Prim("box", "team", c=V(0, 0.75, -0.41), h=V(0.2, 0.22, 0.02), r=0.01))
+    P.append(Prim("box", "stone_l", c=V(0, 1.1, 0), h=V(0.5, 0.06, 0.5), r=0.03))
+    for sx in (-1, 1):
+        for sz in (-1, 1):
+            P.append(Prim("box", "stone_l", c=V(sx * 0.4, 1.22, sz * 0.4), h=V(0.08, 0.08, 0.08), r=0.02))
+    for p in bombardeiro(pose):
+        P.append(OffsetPrim(p, V(0, 1.12, 0), 0.0, 0.55))
+    return P
+
+
+ROSTER.update({"dra": dragao, "mor": morcego, "can": canhao, "tbo": torre_bombas})
+FRAMING.update({"dra": (1.4, 0.95), "mor": (0.95, 0.7), "can": (1.1, 0.5), "tbo": (1.45, 1.05)})
+
+
+def mats_for_extra(team):
+    m = mats_for(team)
+    m.update(TOWER_MATS)
+    return m
+
+
+def make(key, team, pose, yaw):
+    prims = ROSTER[key](pose)
+    return Scene(prims, mats_for_extra(team), yaw=yaw)
+
+
+# ------------------------------------------------------------------ campeões (originais)
+BASE_MATS.update({"teal_robe": (0.12, 0.6, 0.58, 0.25), "leaf": (0.45, 0.85, 0.35, 0.2),
+                  "white_cape": (0.95, 0.95, 0.98, 0.2), "copper_hair": (0.85, 0.42, 0.18, 0.2)})
+
+def aurora(pose):
+    """Cavaleira Aurora: armadura dourada, capa branca, trança acobreada e espada larga."""
+    P, head, (lh, rh) = humanoid(pose, tunic="gold", legs="metal", body_w=0.3)
+    P.append(Prim("ellipsoid", "white_cape", c=V(0, 0.95 + pose.bob, 0.16), r=V(0.36, 0.48, 0.12)))
+    P.append(Prim("sphere", "copper_hair", c=head + V(0, 0.05, 0.1), r=0.37))
+    P.append(Prim("capsule", "copper_hair", a=head + V(0, -0.05, 0.3), b=head + V(0, -0.65, 0.38), r=0.09))   # trança
+    P.append(Prim("ellipsoid", "gold", c=head + V(0, 0.22, 0.04), r=V(0.36, 0.2, 0.36), k=0.03))              # elmo
+    for s in (-1, 1):
+        P.append(Prim("ellipsoid", "white", c=head + V(s * 0.36, 0.3, 0.08), r=V(0.04, 0.16, 0.2), R=rot_z(s * 0.5)))  # asinhas
+    for s in (-1, 1):
+        P.append(Prim("sphere", "gold", c=V(s * 0.34, 1.08 + pose.bob, 0), r=0.14))                             # ombreiras
+    a, b = tool_along(rh, -1.1 + pose.atk * 1.5, 0.95)
+    P.append(Prim("capsule", "white", a=a, b=b, r=0.07))
+    P.append(Prim("capsule", "gold", a=rh + V(-0.16, 0, 0), b=rh + V(0.16, 0, 0), r=0.045))
+    if pose.atk > 0.5:
+        P.append(Prim("sphere", "glow", c=b, r=0.18))
+    return P
+
+def ventania(pose):
+    """Bruxa Ventania: chapéu largo verde-azulado, manto, cajado com orbe e folhas girando."""
+    P, head, (lh, rh) = humanoid(pose, tunic="teal_robe", body_w=0.28)
+    P.append(Prim("ellipsoid", "teal_robe", c=V(0, 0.5 + pose.bob, 0), r=V(0.36, 0.34, 0.32)))
+    P.append(Prim("sphere", "black_hair", c=head + V(0, 0.02, 0.12), r=0.37))
+    P.append(Prim("cyl", "purple", c=head + V(0, 0.22, 0.02), r=0.6, h=0.03, rr=0.02))
+    P.append(Prim("cone", "purple", c=head + V(0, 0.24, 0.08), r=0.3, h=0.7, R=rot_x(0.25)))
+    P.append(Prim("ellipsoid", "leaf", c=head + V(0.2, 0.3, -0.2), r=V(0.1, 0.03, 0.06)))
+    a, b = tool_along(rh, -1.5 + pose.atk * 0.8, 0.2, back=0.75)
+    P.append(Prim("capsule", "wood", a=a, b=b + V(0, 0.5, 0), r=0.04))
+    P.append(Prim("sphere", "leaf", c=b + V(0, 0.62, 0), r=0.13 + pose.atk * 0.06))
+    for i in range(4):
+        ang = i / 4 * math.tau + pose.leg * 2
+        P.append(Prim("ellipsoid", "leaf", c=V(math.cos(ang) * 0.6, 0.9 + 0.2 * i % 2 + pose.bob, math.sin(ang) * 0.6),
+                      r=V(0.09, 0.025, 0.05), R=rot_z(ang)))
+    return P
+
+ROSTER.update({"aur": aurora, "ven": ventania})
+FRAMING.update({"aur": (1.35, 0.95), "ven": (1.35, 0.95)})
+
+
+# ------------------------------------------------------------------ tropas novas (originais)
+BASE_MATS.update({"leaf_d": (0.25, 0.55, 0.25, 0.2), "robe_w": (0.93, 0.95, 0.9, 0.15), "lamp": (1.0, 0.95, 0.5, 0.1),
+                  "hood": (0.25, 0.22, 0.3, 0.15), "canvas": (0.85, 0.78, 0.6, 0.1)})
+
+def curandeira(pose):
+    """Curandeira: manto branco e verde, coroa de folhas e cajado com flor."""
+    P, head, (lh, rh) = humanoid(pose, tunic="robe_w", body_w=0.27)
+    P.append(Prim("ellipsoid", "robe_w", c=V(0, 0.5 + pose.bob, 0), r=V(0.34, 0.32, 0.3)))
+    P.append(Prim("ellipsoid", "team", c=V(0, 0.78 + pose.bob, -0.05), r=V(0.3, 0.06, 0.27)))           # faixa
+    P.append(Prim("sphere", "orange_hair", c=head + V(0, 0.08, 0.1), r=0.37))
+    for i in range(6):
+        a = i / 6 * math.tau
+        P.append(Prim("ellipsoid", "leaf", c=head + V(math.cos(a) * 0.32, 0.28, math.sin(a) * 0.32), r=V(0.08, 0.03, 0.05)))
+    a, b = tool_along(rh, -1.4 + pose.atk * 0.6, 0.2, back=0.7)
+    P.append(Prim("capsule", "wood", a=a, b=b + V(0, 0.45, 0), r=0.035))
+    for i in range(5):
+        ang = i / 5 * math.tau
+        P.append(Prim("sphere", "pink", c=b + V(math.cos(ang) * 0.09, 0.55, math.sin(ang) * 0.09), r=0.06))
+    P.append(Prim("sphere", "glow" if pose.atk > 0.5 else "gold", c=b + V(0, 0.55, 0), r=0.06))
+    return P
+
+def escavador(pose):
+    """Escavador: capacete com lanterna, macacão e picareta."""
+    P, head, (lh, rh) = humanoid(pose, tunic="team", legs="leather", body_w=0.3)
+    P.append(Prim("ellipsoid", "gold", c=head + V(0, 0.18, 0.03), r=V(0.38, 0.22, 0.38), k=0.03))
+    P.append(Prim("cyl", "gold", c=head + V(0, 0.1, 0.03), r=0.42, h=0.03, rr=0.02))
+    P.append(Prim("sphere", "lamp", c=head + V(0, 0.26, -0.36), r=0.08))
+    P.append(Prim("ellipsoid", "brown_hair", c=head + V(0, -0.2, -0.25), r=V(0.2, 0.12, 0.1), k=0.05))        # barba
+    P.append(Prim("box", "leather", c=V(0, 0.78 + pose.bob, -0.2), h=V(0.18, 0.12, 0.05), r=0.02))          # bolso
+    a, b = tool_along(rh, -1.2 + pose.atk * 1.6, 0.7)
+    P.append(Prim("capsule", "wood", a=a, b=b, r=0.04))
+    P.append(Prim("capsule", "metal", a=b + V(-0.25, 0.05, 0), b=b + V(0.25, -0.05, 0), r=0.05))
+    return P
+
+def ladrao(pose):
+    """Ladrão: capuz escuro, máscara e saco de moedas."""
+    P, head, (lh, rh) = humanoid(pose, tunic="hood", legs="dark", body_w=0.25)
+    P.append(Prim("sphere", "hood", c=head + V(0, 0.08, 0.06), r=0.42))
+    P.append(Prim("cone", "hood", c=head + V(0, 0.2, 0.25), r=0.2, h=0.4, R=rot_x(-1.0)))
+    P.append(Prim("box", "team", c=head + V(0, 0.04, -0.33), h=V(0.3, 0.05, 0.04), r=0.02))                 # máscara
+    P.append(Prim("sphere", "canvas", c=lh + V(0, -0.15, 0.05), r=0.18))                                     # saco
+    P.append(Prim("sphere", "gold", c=lh + V(0, 0.02, 0.05), r=0.06))
+    a, b = tool_along(rh, -1.1 + pose.atk * 1.3, 0.35)
+    P.append(Prim("capsule", "metal", a=a, b=b, r=0.03))
+    return P
+
+def balao(pose):
+    """Balão de Bombas: balão listrado na cor do time e cesta com um piloto bombardeiro."""
+    P = []
+    y = 1.3 + pose.bob * 2
+    P.append(Prim("ellipsoid", "team", c=V(0, y + 0.35, 0), r=V(0.55, 0.62, 0.55), k=0.02))
+    for i in range(4):
+        a = i / 4 * math.tau
+        P.append(Prim("ellipsoid", "white", c=V(math.cos(a) * 0.5, y + 0.38, math.sin(a) * 0.5), r=V(0.07, 0.5, 0.07),
+                      R=rot_y(a)))
+    P.append(Prim("box", "wood", c=V(0, y - 0.55, 0), h=V(0.24, 0.14, 0.24), r=0.04))
+    for sx in (-1, 1):
+        for sz in (-1, 1):
+            P.append(Prim("capsule", "leather", a=V(sx * 0.2, y - 0.45, sz * 0.2), b=V(sx * 0.35, y - 0.05, sz * 0.35), r=0.015))
+    P.append(Prim("sphere", "skin", c=V(0, y - 0.33, 0), r=0.13))
+    P.append(Prim("sphere", "metal", c=V(0, y - 0.27, 0), r=0.12))
+    if pose.atk > 0.5:
+        P.append(Prim("sphere", "dark", c=V(0, y - 0.85, 0), r=0.12))
+        P.append(Prim("sphere", "fire", c=V(0.05, y - 0.72, 0), r=0.04))
+    return P
+
+ROSTER.update({"cun": curandeira, "esv": escavador, "lad": ladrao, "bal": balao})
+FRAMING.update({"cun": (1.25, 0.9), "esv": (1.25, 0.9), "lad": (1.2, 0.85), "bal": (1.75, 1.45)})
+
+
+# ------------------------------------------------------------------ construções novas (lote 16)
+BASE_MATS.update({"ember": (1.0, 0.75, 0.25, 0.1), "crystal": (0.65, 0.88, 1.0, 0.95), "soot": (0.2, 0.17, 0.16, 0.2), "brick": (0.72, 0.36, 0.24, 0.05)})
+
+def muralha(pose):
+    """Muralha: paredão de pedras empilhadas com ameias e um estandarte do time."""
+    P = []
+    P.append(Prim("box", "stone_d", c=V(0, 0.12, 0), h=V(0.85, 0.12, 0.32), r=0.04))
+    for i, x in enumerate((-0.6, -0.2, 0.2, 0.6)):
+        P.append(Prim("box", "stone" if i % 2 else "stone_l", c=V(x, 0.38, 0), h=V(0.2, 0.15, 0.27), r=0.04))
+    for i, x in enumerate((-0.4, 0.0, 0.4)):
+        P.append(Prim("box", "stone_l" if i % 2 else "stone", c=V(x, 0.66, 0), h=V(0.2, 0.14, 0.25), r=0.04))
+    for x in (-0.68, -0.23, 0.23, 0.68):
+        P.append(Prim("box", "stone_l", c=V(x * 0.95, 0.9, 0), h=V(0.12, 0.1, 0.22), r=0.03))
+    P.append(Prim("box", "moss", c=V(-0.45, 0.25, -0.3), h=V(0.12, 0.04, 0.02), r=0.02))
+    P.append(Prim("box", "team", c=V(0.05, 0.6, -0.29), h=V(0.13, 0.2, 0.01), r=0.01))
+    P.append(Prim("cone", "team", c=V(0.05, 0.36, -0.29), r=0.1, h=0.1, R=rot_x(math.pi)))
+    return P
+
+def torre_gelo(pose):
+    """Torre de Gelo: base de pedra nevada com um grande cristal azul que brilha ao atirar."""
+    P = []
+    P.append(Prim("box", "stone_d", c=V(0, 0.1, 0), h=V(0.48, 0.1, 0.48), r=0.04))
+    P.append(Prim("cyl", "stone", c=V(0, 0.55, 0), r=0.34, h=0.45, rr=0.05))
+    P.append(Prim("cyl", "white", c=V(0, 1.0, 0), r=0.4, h=0.05, rr=0.04))
+    P.append(Prim("box", "team", c=V(0, 0.6, -0.34), h=V(0.16, 0.18, 0.02), r=0.01))
+    glow = 0.06 if pose.atk > 0.5 else 0.0
+    y = 1.45 + pose.bob * 2
+    P.append(Prim("cone", "crystal", c=V(0, y + 0.15, 0), r=0.27 + glow, h=0.55))
+    P.append(Prim("cone", "crystal", c=V(0, y - 0.22, 0), r=0.27 + glow, h=0.4, R=rot_x(math.pi)))
+    for k in range(3):
+        a = k / 3 * math.tau
+        P.append(Prim("cone", "ice", c=V(math.cos(a) * 0.32, 1.12, math.sin(a) * 0.32), r=0.08, h=0.25, R=rot_z(0.4 * math.cos(a)) @ rot_x(0.4 * math.sin(a))))
+    if pose.atk > 0.5:
+        P.append(Prim("sphere", "glow", c=V(0, y, -0.1), r=0.14))
+    return P
+
+def fornalha(pose):
+    """Fornalha: forno de tijolos com chaminé, boca em brasa e fumaça."""
+    P = []
+    P.append(Prim("box", "stone_d", c=V(0, 0.1, 0), h=V(0.55, 0.1, 0.5), r=0.04))
+    P.append(Prim("ellipsoid", "brick", c=V(0, 0.55, 0), r=V(0.52, 0.48, 0.48), k=0.02))
+    P.append(Prim("box", "soot", c=V(0, 0.42, -0.42), h=V(0.24, 0.2, 0.08), r=0.06))
+    heat = 0.08 if pose.atk > 0.5 else 0.0
+    P.append(Prim("ellipsoid", "ember", c=V(0, 0.42, -0.52), r=V(0.19 + heat, 0.15 + heat, 0.03), k=0.02))
+    P.append(Prim("sphere", "fire", c=V(0, 0.38, -0.5), r=0.08 + heat))
+    P.append(Prim("cyl", "stone_d", c=V(0.25, 1.05, 0.15), r=0.12, h=0.3, rr=0.03))
+    P.append(Prim("cyl", "dark", c=V(0.25, 1.36, 0.15), r=0.14, h=0.04, rr=0.02))
+    s = 0.12 + pose.bob * 0.6
+    P.append(Prim("sphere", "fur_l", c=V(0.27, 1.55 + pose.bob * 2, 0.15), r=s))
+    P.append(Prim("box", "team", c=V(-0.3, 0.75, -0.36), h=V(0.12, 0.12, 0.02), r=0.02))
+    return P
+
+def brasinha(pose):
+    """Brasinha: espírito de fogo saltitante com carinha e chamas no topo."""
+    P = []
+    y = 0.32 + abs(pose.leg) * 0.35 + pose.bob
+    P.append(Prim("sphere", "fire", c=V(0, y, 0), r=0.24))
+    P.append(Prim("sphere", "ember", c=V(0, y + 0.02, -0.08), r=0.17))
+    for k, (dx, h) in enumerate(((-0.1, 0.22), (0.0, 0.32), (0.1, 0.2))):
+        P.append(Prim("cone", "fire", c=V(dx, y + 0.28, 0), r=0.09, h=h))
+    for sx in (-1, 1):
+        P.append(Prim("sphere", "dark", c=V(sx * 0.08, y + 0.04, -0.22), r=0.04))
+    P.append(Prim("sphere", "team", c=V(0, y - 0.2, 0), r=0.1))
+    if pose.atk > 0.5:
+        P.append(Prim("sphere", "glow", c=V(0, y, -0.25), r=0.12))
+    return P
+
+ROSTER.update({"mur": muralha, "tgl": torre_gelo, "frn": fornalha, "bra": brasinha})
+FRAMING.update({"mur": (1.3, 0.55), "tgl": (1.5, 1.1), "frn": (1.35, 0.8), "bra": (0.85, 0.45)})

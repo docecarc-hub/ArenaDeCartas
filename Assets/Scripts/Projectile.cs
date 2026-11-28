@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     float splash;
     int team;
     ArenaGame game;
+    public float slow;      // segundos de lentidão no alvo (Torre de Gelo)
 
     public void Init(Entity target, float damage, bool rotate, float speed, float splash, int team, ArenaGame game)
     {
@@ -41,6 +42,7 @@ public class Projectile : MonoBehaviour
 
         if (((Vector2)transform.position - dest).sqrMagnitude < 0.04f)
         {
+            if (slow > 0f) target.slowT = Mathf.Max(target.slowT, slow);
             if (splash > 0f) game.Splash(team, target.transform.position, splash, damage);
             else target.TakeDamage(damage);
             Destroy(gameObject);

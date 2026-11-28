@@ -89,13 +89,15 @@ public static class Ui
         Fill(new Rect(inner.x, inner.y, inner.width, inner.height * 0.45f), new Color(1f, 1f, 1f, 0.12f));
     }
 
+    public static float FontScale = 1f;   // tamanho do texto (acessibilidade)
+
     public static void Text(Rect r, string text, int size, Color color,
         TextAnchor align = TextAnchor.MiddleCenter, bool bold = true)
     {
         if (label == null)
             label = new GUIStyle(GUI.skin.label) { wordWrap = true, clipping = TextClipping.Overflow };
 
-        label.fontSize = Mathf.Max(7, size);
+        label.fontSize = Mathf.Max(7, Mathf.RoundToInt(size * FontScale));
         label.alignment = align;
         label.fontStyle = bold ? FontStyle.Bold : FontStyle.Normal;
 

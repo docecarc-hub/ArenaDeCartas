@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arena de Cartas — jogo de cartas em tempo real</title>
+<link rel="icon" href="Docs/icone.png">
+<style>
+  :root { --azul:#2a5fd6; --ouro:#f5c542; --fundo:#0f1530; --card:#1b2450; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: "Segoe UI", system-ui, sans-serif; background:linear-gradient(#1a2a6c,#0f1530 60%); color:#eef; }
+  header { text-align:center; padding:48px 20px 24px; }
+  header img { width:120px; filter:drop-shadow(0 6px 18px rgba(0,0,0,.5)); }
+  h1 { font-size:2.6rem; margin:12px 0 4px; letter-spacing:1px; }
+  h1 span { color:var(--ouro); }
+  .sub { opacity:.85; max-width:620px; margin:0 auto; line-height:1.5; }
+  .btns { margin:26px 0 8px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .btn { padding:14px 26px; border-radius:12px; font-weight:700; text-decoration:none; color:#fff; box-shadow:0 4px 0 rgba(0,0,0,.35); }
+  .btn.ouro { background:linear-gradient(#ffcf4a,#e39b18); color:#3a2200; }
+  .btn.azul { background:linear-gradient(#4f86ff,#2a5fd6); }
+  .gif { display:block; margin:24px auto; max-width:92%; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.5); }
+  .shots { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; padding:0 16px; }
+  .shots img { width:260px; border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,.45); }
+  section { max-width:980px; margin:40px auto; padding:0 20px; }
+  h2 { color:var(--ouro); text-align:center; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+  .item { background:var(--card); border-radius:14px; padding:16px 18px; border:1px solid rgba(255,255,255,.08); }
+  .item b { display:block; margin-bottom:6px; font-size:1.05rem; }
+  footer { text-align:center; padding:30px 10px 50px; opacity:.7; font-size:.9rem; }
+</style>
+</head>
+<body>
+<header>
+  <img src="Docs/icone.png" alt="Emblema do Arena de Cartas">
+  <h1>Arena de <span>Cartas</span></h1>
+  <p class="sub">Batalha de cartas em tempo real feita em Unity. Monte seu deck, solte tropas e feitiços
+    e derrube a torre do rei adversário. Arte, personagens, sons e músicas 100% originais.</p>
+  <div class="btns">
+    <a class="btn ouro" href="https://github.com/docecarc-hub/ArenaDeCartas/releases">Baixar o jogo</a>
+    <a class="btn azul" href="https://github.com/docecarc-hub/ArenaDeCartas">Ver o código</a>
+  </div>
+</header>
+
+<img class="gif" src="Docs/personagens.gif" alt="Personagens 3D animados">
+<div class="shots">
+  <img src="Docs/lobby.png" alt="Lobby">
+  <img src="Docs/batalha.png" alt="Batalha">
+</div>
+
+<section>
+  <h2>O que tem no jogo</h2>
+  <div class="grid">
+    <div class="item"><b>36 cartas</b>Tropas, voadores, construções, feitiços e Campeões com habilidade.</div>
+    <div class="item"><b>Campanha</b>10 chefes pelo Reino das Cinco Ilhas, com clima e regras em cada arena.</div>
+    <div class="item"><b>8 adversários</b>Bots com estilos diferentes: agressivo, defensivo, feiticeiro e equilibrado.</div>
+    <div class="item"><b>Replay</b>Reveja cada partida em velocidade x1, x2 ou x4.</div>
+    <div class="item"><b>Progressão</b>Caminho de troféus, baús, loja, missões, passe, maestria e evoluções.</div>
+    <div class="item"><b>Acessibilidade</b>Tamanho do texto, modo daltônico, sem tremor e qualidade baixa.</div>
+  </div>
+</section>
+
+<footer>Feito por Kaio Kelven — Engenharia de Software (Anhanguera) · Unity 6.3 LTS</footer>
+</body>
+</html>

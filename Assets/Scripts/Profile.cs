@@ -46,8 +46,11 @@ public static class Profile
 
     // Coleção: quantas cópias você tem de cada carta (0 = ainda não ganhou)
     static readonly Dictionary<string, int> cards = new Dictionary<string, int>();
-    // Deck atual (8 chaves de carta)
-    public static readonly List<string> Deck = new List<string>();
+    // Três decks salvos (8 chaves de carta cada); Deck é sempre o deck ativo
+    static readonly List<string>[] decks = { new List<string>(), new List<string>(), new List<string>() };
+    public static int ActiveDeck;
+    public static List<string> Deck => decks[ActiveDeck];
+    public static List<string> DeckAt(int i) => decks[i];
     public static CardData[] AllCards { get; private set; }
     public static readonly Chest[] Chests = { new Chest(), new Chest(), new Chest(), new Chest() };
 
@@ -77,9 +80,50 @@ public static class Profile
             var kv = part.Split(':');
             if (kv.Length == 2 && int.TryParse(kv[1], out int n)) cards[kv[0]] = n;
         }
-        Deck.Clear();
-        foreach (var k in PlayerPrefs.GetString("deck", "").Split(','))
-            if (!string.IsNullOrEmpty(k)) Deck.Add(k);
+        ActiveDeck = Mathf.Clamp(PlayerPrefs.GetInt("deckAtivo", 0), 0, 2);
+        for (int d = 0; d < 3; d++)
+        {
+            decks[d].Clear();
+            // compatibilidade: o deck antigo ("deck") vira o deck 1
+            string saved = PlayerPrefs.GetString("deck" + d, d == 0 ? PlayerPrefs.GetString("deck", "") : "");
+            foreach (var k in saved.Split(','))
+                if (!string.IsNullOrEmpty(k)) decks[d].Add(k);
+        }
+        SeasonCrowns = PlayerPrefs.GetInt("coroasTemporada", 0);
+        CrownsTotal = PlayerPrefs.GetInt("coroasTotal", 0);
+        UpgradesTotal = PlayerPrefs.GetInt("evolucoes", 0);
+        LoadSet("passe", passClaimed);
+        LoadSet("conquistas", achClaimed);
+        TowerSkin = PlayerPrefs.GetString("torreVisual", "");
+        TutorialDone = PlayerPrefs.GetInt("tutorialFeito", 0) == 1;
+        LoadSet("evos", evolved);
+        loginIndex = PlayerPrefs.GetInt("loginIndice", 0);
+        challengeWeek = PlayerPrefs.GetString("desafioSemana", "");
+        ChallengeWins = PlayerPrefs.GetInt("desafioVitorias", 0);
+        ChallengeLosses = PlayerPrefs.GetInt("desafioDerrotas", 0);
+        challengeClaimed = PlayerPrefs.GetInt("desafioPego", 0) == 1;
+        TextScale = PlayerPrefs.GetInt("textoTamanho", 1);
+        ColorBlind = PlayerPrefs.GetInt("daltonico", 0) == 1;
+        ReduceShake = PlayerPrefs.GetInt("semTremor", 0) == 1;
+        PostFx = PlayerPrefs.GetInt("efeitosVisuais", 1) == 1;
+        IntroSeen = PlayerPrefs.GetInt("introVista", 0) == 1;
+        LowQuality = PlayerPrefs.GetInt("qualidadeBaixa", 0) == 1;
+        ShowFps = PlayerPrefs.GetInt("mostrarFps", 0) == 1;
+        cardWins.Clear();
+        foreach (var part in PlayerPrefs.GetString("maestria", "").Split(','))
+        {
+            var kv = part.Split(':');
+            if (kv.Length == 3 && int.TryParse(kv[1], out int w) && int.TryParse(kv[2], out int tier)) { cardWins[kv[0]] = w; masteryClaimed[kv[0]] = tier; }
+        }
+        Ui.FontScale = TextScales[Mathf.Clamp(TextScale, 0, 2)];
+        loginDay = PlayerPrefs.GetString("loginDia", "");
+        var cs = PlayerPrefs.GetString("campanha", "").Split(',');
+        for (int i = 0; i < CampaignStars.Length; i++)
+            CampaignStars[i] = i < cs.Length && int.TryParse(cs[i], out int st) ? st : 0;
+        BestLeague = PlayerPrefs.GetInt("ligaMax", -1);
+        LoadSet("torresCompradas", skinsOwned);
+        eventDay = PlayerPrefs.GetString("eventoDia", "");
+        eventWins = PlayerPrefs.GetInt("eventoVitorias", 0);
 
         levels.Clear();
         foreach (var part in PlayerPrefs.GetString("niveis", "").Split(','))
@@ -134,7 +178,37 @@ public static class Profile
         var parts = new List<string>();
         foreach (var kv in cards) parts.Add(kv.Key + ":" + kv.Value);
         PlayerPrefs.SetString("cartas", string.Join(",", parts));
-        PlayerPrefs.SetString("deck", string.Join(",", Deck));
+        PlayerPrefs.SetInt("deckAtivo", ActiveDeck);
+        for (int d = 0; d < 3; d++) PlayerPrefs.SetString("deck" + d, string.Join(",", decks[d]));
+        PlayerPrefs.SetInt("coroasTemporada", SeasonCrowns);
+        PlayerPrefs.SetInt("coroasTotal", CrownsTotal);
+        PlayerPrefs.SetInt("evolucoes", UpgradesTotal);
+        PlayerPrefs.SetString("passe", string.Join(",", passClaimed));
+        PlayerPrefs.SetString("conquistas", string.Join(",", achClaimed));
+        PlayerPrefs.SetString("torreVisual", TowerSkin ?? "");
+        PlayerPrefs.SetInt("tutorialFeito", TutorialDone ? 1 : 0);
+        PlayerPrefs.SetString("evos", string.Join(",", evolved));
+        PlayerPrefs.SetInt("loginIndice", loginIndex);
+        PlayerPrefs.SetString("desafioSemana", challengeWeek ?? "");
+        PlayerPrefs.SetInt("desafioVitorias", ChallengeWins);
+        PlayerPrefs.SetInt("desafioDerrotas", ChallengeLosses);
+        PlayerPrefs.SetInt("desafioPego", challengeClaimed ? 1 : 0);
+        PlayerPrefs.SetInt("textoTamanho", TextScale);
+        PlayerPrefs.SetInt("daltonico", ColorBlind ? 1 : 0);
+        PlayerPrefs.SetInt("semTremor", ReduceShake ? 1 : 0);
+        PlayerPrefs.SetInt("efeitosVisuais", PostFx ? 1 : 0);
+        PlayerPrefs.SetInt("introVista", IntroSeen ? 1 : 0);
+        PlayerPrefs.SetInt("qualidadeBaixa", LowQuality ? 1 : 0);
+        PlayerPrefs.SetInt("mostrarFps", ShowFps ? 1 : 0);
+        var mm = new List<string>();
+        foreach (var kv in cardWins) mm.Add($"{kv.Key}:{kv.Value}:{(masteryClaimed.TryGetValue(kv.Key, out int t) ? t : 0)}");
+        PlayerPrefs.SetString("maestria", string.Join(",", mm));
+        PlayerPrefs.SetString("loginDia", loginDay ?? "");
+        PlayerPrefs.SetString("campanha", string.Join(",", CampaignStars));
+        PlayerPrefs.SetInt("ligaMax", BestLeague);
+        PlayerPrefs.SetString("torresCompradas", string.Join(",", skinsOwned));
+        PlayerPrefs.SetString("eventoDia", eventDay ?? "");
+        PlayerPrefs.SetInt("eventoVitorias", eventWins);
         var lv = new List<string>();
         foreach (var kv in levels) lv.Add(kv.Key + ":" + kv.Value);
         PlayerPrefs.SetString("niveis", string.Join(",", lv));
@@ -165,13 +239,16 @@ public static class Profile
         foreach (var c in all)
             if (c.starter && !Owns(c.key)) cards[c.key] = 0;
 
-        Deck.RemoveAll(k => !Owns(k) || Find(k) == null);
-        for (int i = Deck.Count - 1; i >= 0; i--)
-            if (Deck.IndexOf(Deck[i]) != i) Deck.RemoveAt(i);
-        foreach (var c in all)
+        foreach (var deck in decks)
         {
-            if (Deck.Count >= 8) break;
-            if (Owns(c.key) && !Deck.Contains(c.key)) Deck.Add(c.key);
+            deck.RemoveAll(k => !Owns(k) || Find(k) == null);
+            for (int i = deck.Count - 1; i >= 0; i--)
+                if (deck.IndexOf(deck[i]) != i) deck.RemoveAt(i);
+            foreach (var c in all)
+            {
+                if (deck.Count >= 8) break;
+                if (Owns(c.key) && !deck.Contains(c.key)) deck.Add(c.key);
+            }
         }
         Save();
     }
@@ -235,7 +312,44 @@ public static class Profile
             foreach (var c in allCards)
                 if (c.unlockArena == arena && !c.starter) msg += $"\n- {c.name}";
         }
+        int league = LeagueIndex;
+        if (league > BestLeague)
+        {
+            BestLeague = league;
+            int prize = 20 * (league + 1);
+            Gems += prize;
+            msg = (msg != null ? msg + "\n\n" : "") + $"NOVA LIGA: {LeagueNames[league]}! +{prize} gemas";
+        }
         return msg;
+    }
+
+    // ------------------------------------------------------------ Ligas (depois da última arena)
+
+    public static readonly int[] LeagueTrophies = { 1300, 1700, 2200, 3000 };
+    public static readonly string[] LeagueNames = { "Liga Bronze", "Liga Prata", "Liga Ouro", "Liga Lenda" };
+    public static readonly Color[] LeagueColors =
+    {
+        new Color(0.80f, 0.50f, 0.25f), new Color(0.75f, 0.80f, 0.88f), new Color(1.00f, 0.80f, 0.25f), new Color(0.70f, 0.35f, 1.00f)
+    };
+    public static int BestLeague = -1;
+    public static int LeagueIndex
+    {
+        get
+        {
+            int l = -1;
+            for (int i = 0; i < LeagueTrophies.Length; i++) if (Trophies >= LeagueTrophies[i]) l = i;
+            return l;
+        }
+    }
+    // Próxima meta: próxima arena ou próxima liga
+    public static int NextGoal
+    {
+        get
+        {
+            foreach (var t in ArenaTrophies) if (t > Trophies) return t;
+            foreach (var t in LeagueTrophies) if (t > Trophies) return t;
+            return -1;
+        }
     }
 
     public static bool IsClaimed(int trophies) => claimedRewards.Contains(trophies);
@@ -260,8 +374,10 @@ public static class Profile
 
         int before = Trophies;
         Trophies = ArenaFloor + (Trophies - ArenaFloor) / 2;
-        int prize = 10 + HighestArena * 10;
+        int prize = 10 + HighestArena * 10 + (LeagueIndex + 1) * 25;
         Gems += prize;
+        SeasonCrowns = 0;
+        passClaimed.Clear();
         SeasonEndTicks = DateTime.UtcNow.AddDays(SeasonDays).Ticks;
         Save();
         return $"Nova temporada!\n\nTroféus: {before} -> {Trophies}\nVocê continua na {ArenaNames[HighestArena]}\n\nPrêmio da temporada: +{prize} gemas";
@@ -355,9 +471,9 @@ public static class Profile
             {
                 // boa chance de vir uma carta que você ainda não tem
                 CardData pick = missing.Count > 0 && UnityEngine.Random.value < 0.35f
-                    ? missing[UnityEngine.Random.Range(0, missing.Count)]
-                    : pool[UnityEngine.Random.Range(0, pool.Count)];
-                int n = UnityEngine.Random.Range(1, 3 + t * 2);
+                    ? PickByRarity(missing)
+                    : PickByRarity(pool);
+                int n = Mathf.Max(1, UnityEngine.Random.Range(1, 3 + t * 2) / RarityCopyDiv[pick.rarity]);
                 if (!Owns(pick.key))
                 {
                     fresh.Add(pick.key);
@@ -374,6 +490,23 @@ public static class Profile
         }
         Save();
         return res;
+    }
+
+    // Chance de cada raridade cair (Comum, Rara, Épica, Lendária) e divisor de cópias
+    public static readonly int[] RarityWeight = { 60, 25, 12, 3, 2 };
+    public static readonly int[] RarityCopyDiv = { 1, 2, 4, 10, 20 };
+
+    public static CardData PickByRarity(List<CardData> list)
+    {
+        int total = 0;
+        foreach (var c in list) total += RarityWeight[c.rarity];
+        int r = UnityEngine.Random.Range(0, total);
+        foreach (var c in list)
+        {
+            r -= RarityWeight[c.rarity];
+            if (r < 0) return c;
+        }
+        return list[list.Count - 1];
     }
 
     public static string Summary(ChestResult r)
@@ -395,7 +528,9 @@ public static class Profile
     static readonly int[] UpgradeXp = { 4, 5, 6, 10, 25, 50, 100 };
 
     public static int CardLevel(string key) => levels.TryGetValue(key, out int l) ? l : 1;
-    public static int CopiesNeeded(string key) => CardLevel(key) >= MaxCardLevel ? 0 : UpgradeCopies[CardLevel(key) - 1];
+    public static int CopiesNeeded(string key) =>
+        CardLevel(key) >= MaxCardLevel ? 0 : Math.Max(1, UpgradeCopies[CardLevel(key) - 1] / RarityCopyDiv[RarityOf(key)]);
+    static int RarityOf(string key) { var c = Find(key); return c != null ? c.rarity : 0; }
     public static int CoinsNeeded(string key) => CardLevel(key) >= MaxCardLevel ? 0 : UpgradeCoins[CardLevel(key) - 1];
     public static bool HasCopiesToUpgrade(string key) =>
         Owns(key) && CardLevel(key) < MaxCardLevel && CardCount(key) >= CopiesNeeded(key);
@@ -408,7 +543,8 @@ public static class Profile
     {
         if (!CanUpgrade(key)) return false;
         int lvl = CardLevel(key);
-        cards[key] = CardCount(key) - UpgradeCopies[lvl - 1];
+        cards[key] = CardCount(key) - CopiesNeeded(key);
+        UpgradesTotal++;
         Coins -= UpgradeCoins[lvl - 1];
         levels[key] = lvl + 1;
         AddXp(UpgradeXp[lvl - 1]);
@@ -449,6 +585,8 @@ public static class Profile
     {
         RollDay();
         CrownsToday = Mathf.Min(CrownChestGoal, CrownsToday + n);
+        SeasonCrowns += n;
+        CrownsTotal += n;
     }
 
     public static bool CrownChestReady { get { RollDay(); return CrownsToday >= CrownChestGoal && !crownChestClaimed; } }
@@ -612,4 +750,320 @@ public static class Profile
     // ------------------------------------------------------------ Estatísticas
 
     public static int WinsTotal, LossesTotal;
+
+    // ------------------------------------------------------------ Passe da temporada (grátis, por coroas)
+
+    public static int SeasonCrowns, CrownsTotal, UpgradesTotal;
+    static readonly HashSet<int> passClaimed = new HashSet<int>();
+    public const int PassTiers = 10, CrownsPerTier = 6;
+    // tipo: 0 moedas, 1 baú (valor = tipo do baú), 2 gemas
+    public static readonly int[,] PassRewards =
+    {
+        { 0, 50 }, { 1, 0 }, { 2, 10 }, { 0, 100 }, { 1, 1 },
+        { 2, 20 }, { 0, 200 }, { 1, 1 }, { 2, 40 }, { 1, 2 }
+    };
+    public static bool PassUnlocked(int tier) => SeasonCrowns >= (tier + 1) * CrownsPerTier;
+    public static bool PassClaimed(int tier) => passClaimed.Contains(tier);
+    public static int PassTiersReady()
+    {
+        int n = 0;
+        for (int i = 0; i < PassTiers; i++) if (PassUnlocked(i) && !PassClaimed(i)) n++;
+        return n;
+    }
+    public static string PassRewardText(int tier)
+    {
+        int kind = PassRewards[tier, 0], v = PassRewards[tier, 1];
+        return kind == 0 ? $"{v} moedas" : kind == 2 ? $"{v} gemas" : $"Baú de {ChestNames[v]}";
+    }
+    // Retorna o baú sorteado (ou null se o prêmio foi moedas/gemas)
+    public static ChestResult ClaimPass(int tier)
+    {
+        if (!PassUnlocked(tier) || PassClaimed(tier)) return null;
+        passClaimed.Add(tier);
+        int kind = PassRewards[tier, 0], v = PassRewards[tier, 1];
+        ChestResult res = null;
+        if (kind == 0) Coins += v;
+        else if (kind == 2) Gems += v;
+        else res = RollChest(v);
+        Save();
+        return res;
+    }
+
+    // ------------------------------------------------------------ Conquistas (gemas)
+
+    public class Achievement
+    {
+        public string id, name, desc;
+        public int goal, gems;
+        public Func<int> progress;
+    }
+
+    public static readonly Achievement[] Achievements =
+    {
+        new Achievement { id = "v10", name = "Primeiros Passos", desc = "Vença 10 batalhas", goal = 10, gems = 10, progress = () => WinsTotal },
+        new Achievement { id = "v50", name = "Veterano", desc = "Vença 50 batalhas", goal = 50, gems = 30, progress = () => WinsTotal },
+        new Achievement { id = "c30", name = "Caçador de Coroas", desc = "Ganhe 30 coroas", goal = 30, gems = 15, progress = () => CrownsTotal },
+        new Achievement { id = "t300", name = "Subindo!", desc = "Chegue a 300 troféus", goal = 300, gems = 20, progress = () => BestTrophies },
+        new Achievement { id = "t1000", name = "Lenda do Vulcão", desc = "Chegue a 1000 troféus", goal = 1000, gems = 50, progress = () => BestTrophies },
+        new Achievement { id = "col12", name = "Colecionador", desc = "Tenha 12 cartas diferentes", goal = 12, gems = 15, progress = OwnedCount },
+        new Achievement { id = "evo10", name = "Treinador", desc = "Evolua cartas 10 vezes", goal = 10, gems = 20, progress = () => UpgradesTotal },
+        new Achievement { id = "rei5", name = "Rei em Ascensão", desc = "Chegue ao nível 5", goal = 5, gems = 25, progress = () => Level },
+    };
+    static readonly HashSet<string> achClaimed = new HashSet<string>();
+
+    public static int OwnedCount()
+    {
+        int n = 0;
+        foreach (var kv in cards) n++;
+        return n;
+    }
+    public static bool AchievementDone(Achievement a) => a.progress() >= a.goal;
+    public static bool AchievementClaimed(Achievement a) => achClaimed.Contains(a.id);
+    public static int AchievementsReady()
+    {
+        int n = 0;
+        foreach (var a in Achievements) if (AchievementDone(a) && !AchievementClaimed(a)) n++;
+        return n;
+    }
+    public static void CheckAchievements() { }   // progresso é calculado na hora; mantido para chamadas futuras
+    public static bool ClaimAchievement(Achievement a)
+    {
+        if (!AchievementDone(a) || AchievementClaimed(a)) return false;
+        achClaimed.Add(a.id);
+        Gems += a.gems;
+        Save();
+        return true;
+    }
+
+    // ------------------------------------------------------------ Eventos (3 prêmios por dia)
+
+    static string eventDay;
+    static int eventWins;
+    public const int EventRewardsPerDay = 3;
+    static void RollEventDay()
+    {
+        string today = DateTime.UtcNow.ToString("yyyyMMdd");
+        if (eventDay != today) { eventDay = today; eventWins = 0; }
+    }
+    public static int EventRewardLeft() { RollEventDay(); return Math.Max(0, EventRewardsPerDay - eventWins); }
+    public static void EventWin() { RollEventDay(); eventWins++; }
+
+    // Evento do dia: gira entre os três modos especiais
+    public static MatchMode TodayEvent()
+    {
+        int d = (int)(DateTime.UtcNow.Date - new DateTime(2026, 1, 1)).TotalDays;
+        MatchMode[] list = { MatchMode.ElixirTriplo, MatchMode.DeckAleatorio, MatchMode.SoDeLonge };
+        return list[((d % 3) + 3) % 3];
+    }
+
+    static void LoadSet(string key, HashSet<int> set)
+    {
+        set.Clear();
+        foreach (var p in PlayerPrefs.GetString(key, "").Split(','))
+            if (int.TryParse(p, out int v)) set.Add(v);
+    }
+    static void LoadSet(string key, HashSet<string> set)
+    {
+        set.Clear();
+        foreach (var p in PlayerPrefs.GetString(key, "").Split(','))
+            if (!string.IsNullOrEmpty(p)) set.Add(p);
+    }
+
+    // ------------------------------------------------------------ Visual das torres (cosmético)
+
+    public static readonly string[] SkinIds = { "", "gelo", "vulcao", "ouro" };
+    public static readonly string[] SkinNames = { "Pedra", "Gelo", "Vulcão", "Ouro" };
+    public static readonly int[] SkinPrices = { 0, 50, 80, 150 };
+    public static string TowerSkin = "";
+    public static bool TutorialDone;
+    static readonly HashSet<string> skinsOwned = new HashSet<string>();
+    public static bool OwnsSkin(string id) => string.IsNullOrEmpty(id) || skinsOwned.Contains(id);
+    public static bool BuySkin(int i)
+    {
+        if (OwnsSkin(SkinIds[i]) || Gems < SkinPrices[i]) return false;
+        Gems -= SkinPrices[i];
+        skinsOwned.Add(SkinIds[i]);
+        TowerSkin = SkinIds[i];
+        Save();
+        return true;
+    }
+
+    // ------------------------------------------------------------ Despertar EVO (evolução especial)
+
+    public static readonly string[] EvoCards = { "gue", "arq", "esc", "bom" };
+    public static readonly Dictionary<string, string> EvoBonus = new Dictionary<string, string>
+    {
+        { "gue", "+30% de vida e +15% de dano" },
+        { "arq", "atiram 65% mais rápido" },
+        { "esc", "+50% de vida" },
+        { "bom", "explosão 40% maior e +10% de dano" },
+    };
+    public const int EvoMinLevel = 3, EvoCoins = 300, EvoGems = 20;
+    static readonly HashSet<string> evolved = new HashSet<string>();
+    public static bool HasEvo(string key) => Array.IndexOf(EvoCards, key) >= 0;
+    public static bool Evolved(string key) => evolved.Contains(key);
+    public static bool CanAwaken(string key) =>
+        HasEvo(key) && Owns(key) && !Evolved(key) && CardLevel(key) >= EvoMinLevel && Coins >= EvoCoins && Gems >= EvoGems;
+    public static bool Awaken(string key)
+    {
+        if (!CanAwaken(key)) return false;
+        Coins -= EvoCoins;
+        Gems -= EvoGems;
+        evolved.Add(key);
+        Save();
+        return true;
+    }
+    public static bool ChampionInDeck(List<string> deck, int ignoreIndex = -1)
+    {
+        for (int i = 0; i < deck.Count; i++)
+        {
+            if (i == ignoreIndex) continue;
+            var c = Find(deck[i]);
+            if (c != null && c.champion) return true;
+        }
+        return false;
+    }
+
+    // ------------------------------------------------------------ Prêmio de login diário (7 dias)
+
+    static int loginIndex;
+    static string loginDay;
+    // tipo: 0 moedas, 1 gemas, 2 baú (valor = tipo do baú)
+    public static readonly int[,] LoginRewards = { { 0, 50 }, { 1, 5 }, { 2, 0 }, { 0, 100 }, { 1, 10 }, { 2, 1 }, { 2, 2 } };
+    public static int LoginIndex => loginIndex % 7;
+    public static bool LoginAvailable => loginDay != DateTime.Now.ToString("yyyyMMdd");
+    public static string LoginRewardText(int i)
+    {
+        int k = LoginRewards[i, 0], v = LoginRewards[i, 1];
+        return k == 0 ? $"{v} moedas" : k == 1 ? $"{v} gemas" : $"Baú de {ChestNames[v]}";
+    }
+    public static ChestResult ClaimLogin()
+    {
+        if (!LoginAvailable) return null;
+        int i = LoginIndex, k = LoginRewards[i, 0], v = LoginRewards[i, 1];
+        loginDay = DateTime.Now.ToString("yyyyMMdd");
+        loginIndex++;
+        ChestResult res = null;
+        if (k == 0) Coins += v; else if (k == 1) Gems += v; else res = RollChest(v);
+        Save();
+        return res;
+    }
+
+    // ------------------------------------------------------------ Campanha (10 fases com chefes)
+
+    public static readonly int[] CampaignStars = new int[10];
+    public static int CampaignUnlocked
+    {
+        get
+        {
+            int i = 0;
+            while (i < CampaignStars.Length && CampaignStars[i] > 0) i++;
+            return Mathf.Min(i, CampaignStars.Length - 1);
+        }
+    }
+    public static int CampaignTotalStars { get { int s = 0; foreach (var x in CampaignStars) s += x; return s; } }
+    // Prêmio da primeira vitória em cada fase
+    public static string CampaignFirstReward(int phase) =>
+        phase % 3 == 2 ? "Baú de Ouro" : phase % 2 == 0 ? $"{80 + phase * 20} moedas" : $"{10 + phase * 2} gemas";
+    public static ChestResult GiveCampaignReward(int phase)
+    {
+        if (phase % 3 == 2) return RollChest(2);
+        if (phase % 2 == 0) Coins += 80 + phase * 20; else Gems += 10 + phase * 2;
+        Save();
+        return null;
+    }
+
+    // ------------------------------------------------------------ Desafio semanal (até 12 vitórias, 3 derrotas eliminam)
+
+    static string challengeWeek;
+    static bool challengeClaimed;
+    public static int ChallengeWins, ChallengeLosses;
+    public const int ChallengeMaxWins = 12, ChallengeMaxLosses = 3;
+    static string WeekId()
+    {
+        var d = DateTime.Now.Date;
+        int monday = ((int)d.DayOfWeek + 6) % 7;
+        return d.AddDays(-monday).ToString("yyyyMMdd");
+    }
+    static void RollWeek()
+    {
+        string w = WeekId();
+        if (challengeWeek == w) return;
+        challengeWeek = w;
+        ChallengeWins = ChallengeLosses = 0;
+        challengeClaimed = false;
+    }
+    public static bool ChallengeOver { get { RollWeek(); return ChallengeWins >= ChallengeMaxWins || ChallengeLosses >= ChallengeMaxLosses; } }
+    public static bool ChallengeClaimed { get { RollWeek(); return challengeClaimed; } }
+    public static int ChallengeWinsNow { get { RollWeek(); return ChallengeWins; } }
+    public static int ChallengeLossesNow { get { RollWeek(); return ChallengeLosses; } }
+    public static void ChallengeResult(bool win)
+    {
+        RollWeek();
+        if (ChallengeOver) return;
+        if (win) ChallengeWins++; else ChallengeLosses++;
+        Save();
+    }
+    // Prêmio cresce a cada vitória
+    public static string ChallengeRewardText(int wins) =>
+        wins >= 12 ? "Baú de Ouro + 100 gemas" : wins >= 9 ? "Baú de Ouro + 30 gemas" : wins >= 6 ? "Baú de Prata + 15 gemas"
+        : wins >= 3 ? $"{wins * 40} moedas + 5 gemas" : $"{wins * 30} moedas";
+    public static ChestResult ClaimChallenge()
+    {
+        RollWeek();
+        if (!ChallengeOver || challengeClaimed) return null;
+        challengeClaimed = true;
+        int w = ChallengeWins;
+        ChestResult res = null;
+        if (w >= 12) { Gems += 100; res = RollChest(2); }
+        else if (w >= 9) { Gems += 30; res = RollChest(2); }
+        else if (w >= 6) { Gems += 15; res = RollChest(1); }
+        else if (w >= 3) { Coins += w * 40; Gems += 5; }
+        else Coins += w * 30;
+        Save();
+        return res;
+    }
+
+    // ------------------------------------------------------------ Acessibilidade
+
+    public static int TextScale = 1;                       // 0 pequeno, 1 normal, 2 grande
+    public static readonly float[] TextScales = { 0.85f, 1f, 1.2f };
+    public static readonly string[] TextScaleNames = { "Pequeno", "Normal", "Grande" };
+    public static bool ColorBlind;                         // inimigo em laranja em vez de vermelho
+    public static bool ReduceShake;                        // sem tremor de tela
+
+    public static bool PostFx = true;      // brilho, vinheta e cores (pode desligar em PCs fracos)
+    public static bool IntroSeen;          // já viu a história de abertura
+    public static bool LowQuality;         // qualidade baixa: 30 quadros/s e menos partículas
+    public static bool ShowFps;            // mostra os quadros por segundo no canto da tela
+
+    // ------------------------------------------------------------ Maestria de cartas (vitórias com a carta no deck)
+
+    static readonly Dictionary<string, int> cardWins = new Dictionary<string, int>();
+    static readonly Dictionary<string, int> masteryClaimed = new Dictionary<string, int>();
+    public static readonly int[] MasteryGoals = { 5, 15, 40 };
+    public static readonly string[] MasteryRewards = { "50 moedas", "150 moedas", "20 gemas" };
+    public static int CardWins(string key) => cardWins.TryGetValue(key, out int w) ? w : 0;
+    public static int MasteryClaimedTier(string key) => masteryClaimed.TryGetValue(key, out int t) ? t : 0;
+    public static int MasteryReachedTier(string key)
+    {
+        int w = CardWins(key), t = 0;
+        while (t < MasteryGoals.Length && w >= MasteryGoals[t]) t++;
+        return t;
+    }
+    public static bool MasteryReady(string key) => MasteryReachedTier(key) > MasteryClaimedTier(key);
+    public static bool AnyMasteryReady() { foreach (var kv in cardWins) if (MasteryReady(kv.Key)) return true; return false; }
+    public static void AddDeckWin()
+    {
+        foreach (var k in Deck) cardWins[k] = CardWins(k) + 1;
+    }
+    public static string ClaimMastery(string key)
+    {
+        if (!MasteryReady(key)) return null;
+        int t = MasteryClaimedTier(key);
+        if (t == 0) Coins += 50; else if (t == 1) Coins += 150; else Gems += 20;
+        masteryClaimed[key] = t + 1;
+        Save();
+        return MasteryRewards[t];
+    }
 }
